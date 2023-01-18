@@ -58,23 +58,17 @@ const pattern = {
 
 
 
- function validate(regex, field) {
-    if (regex.test(field.value)) {
-        field.classList.add('green')
-        field.classList.remove('red')
-    }else {
-        field.classList.add('red')
-        field.classList.remove('green')
+function validate(field, regex) {
+    if(regex.test(field.value)) {
+        field.style.border = '2px solid green'
+    } else{
+        field.style.border = '2px solid red'
+
     }
- }
+}
 
-
-    
-    reqInp.forEach((inp) => {
-       inp.onkeyup = () => {
-        let key = inp.name
-        let r = inp.value
-        console.log(r)
-        
+reqInp.forEach(inp => {
+    inp.onkeyup = () => {
+        validate(inp, pattern[inp.name])
     }
 })
