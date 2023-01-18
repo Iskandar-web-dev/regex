@@ -60,7 +60,7 @@ const pattern = {
 
 function validate(field, regex) {
     if(regex.test(field.value)) {
-        field.style.border = '2px solid green'
+        field.style.border = '2px solid rgb(0, 255, 38)'
     } else{
         field.style.border = '2px solid red'
 
